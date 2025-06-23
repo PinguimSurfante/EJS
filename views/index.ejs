@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <section class="text-center container-fluid">
+      <div class="row py-lg-5 banner">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Em Busca do Estágio</h1>
+          <p class="lead text-body-secondary">
+            Sou um homem de 19 anos em busca do primeiro estágio e entusiasta em
+            aprender, nesse projeto estou fazendo o backend em node e usando EJS
+            para se conectar com o front-end, é um projeto pessoal para por em
+            prática o que eu acho necessário para consolidar conhecimentos
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-centralizado">
+      <div class="botao">
+        <button onclick="window.location.href='/add'">Adicionar</button>
+      </div>
+
+
+      <div class="album  bg-body-tertiary">
+        <div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <% info.forEach(post => { %>
+              
+            <div class="col efect" data-id="<%= post.id %>">
+              <div class="card shadow-sm">
+                <svg
+                  aria-label="Placeholder: Thumbnail"
+                  class="bd-placeholder-img card-img-top"
+                  height="225"
+                  preserveAspectRatio="xMidYMid slice"
+                  role="img"
+                  width="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title><%= post.title %></title>
+                  <rect width="100%" height="100%" fill="#55595c"></rect>
+                    
+                </svg>
+                <div class="card-body">
+                  <p class="card-text">
+                    <%= post.title %>
+                    <%= post.id %>
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                   
+                   <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        onclick="window.location.href='/blog/<%=post.id%>'"
+                      >
+                        View
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        onclick="window.location.href='/edit/<%= post.id %>'"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        data-doc="<%= post.id %>"
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary delete"
+                      >
+                        Remove
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            <!-- </a> -->
+            </div>
+            <% }) %>
+
+            </div>
+            </div>
+            </div>
+            </div>
+             <%- include("partials/footer.ejs") %>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/index.js"></script>
+
+
+        <script>
+        $(".delete").on("click", function (e) {
+
+          const id = $(this).data("doc");
+          const endpoint = `/remove/${id}`;
+
+          fetch(endpoint, {
+            method: "DELETE",
+          })
+            .then((res) => {
+              if (!res.ok) throw new Error("Erro ao deletar");
+              return res.json();
+            })
+            .then(() => {
+              $(`[data-id="${id}"]`).fadeOut(300, function () {
+                $(this).remove();
+              });
+            })
+            .catch((e) => console.error("Erro ao deletar:", e));
+        });
+
+
+        </script>
+
+
+  </body>
+</html> 

@@ -1,0 +1,68 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.banner{
+    background-color: aqua;
+}
+
+p, ul {
+    font-family: "Roboto", sans-serif;
+}
+
+.container-centralizado {
+  width: 1400px;
+  max-width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.botao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 30px;
+  margin-top: 3rem;
+}
+
+.botao button {
+  border-radius: 82px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+}
+
+
+
+
+.efect .card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.efect:hover{
+  transform: scale(1.10);
+  filter: brightness(1.1);
+  z-index: 1;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.btn-group .button {  
+  display: flex;
+  margin-top: auto;
+}
+
+.card-body .d-flex {
+  margin-top: auto; /* Isso empurra o botão pro fim */
+  /* flex-direction: column; */
+}

@@ -1,0 +1,34 @@
+header{
+    background-color: black;
+}
+
+.head{
+    display: flex;
+    background-color: white;
+    width: 1400px;
+    height: 81px;
+    border-radius: 7px;
+    margin: 0 auto;
+}
+
+li.nav-item{
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+
+.background{
+    background-color: #444444;
+    margin-top: 5rem;
+}
+
+.custom-footer{
+    color: white;
+    
+}
+
+.custom-footer:hover{
+    color: black;
+    font-weight: bold;
+}
