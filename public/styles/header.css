@@ -1,5 +1,5 @@
 header{
-    background-color: black;
+    background-color: #252525 ;
 }
 
 .head{
@@ -11,10 +11,14 @@ header{
     margin: 0 auto;
 }
 
+h4{
+    color: white;
+    margin-top: 3px;
+}
+
 li.nav-item{
     display: flex;
     align-items: center;
-    margin-right: 2rem;
 }
 
 

@@ -63,6 +63,15 @@ p, ul {
 }
 
 .card-body .d-flex {
-  margin-top: auto; /* Isso empurra o botão pro fim */
-  /* flex-direction: column; */
+  margin-top: auto;
+}
+
+@media screen and (max-width:650px) {
+    h1{
+      margin-top: 2rem !important;
+    }
+
+    p{
+      margin-bottom: 2rem !important;
+    }
 }
