@@ -2,6 +2,15 @@ header{
     background-color: #252525 ;
 }
 
+.navb{
+    color: white !important;
+}
+
+.navb:hover{
+    color: black;
+    font-weight: bold;
+}
+
 .head{
     display: flex;
     background-color: white;
