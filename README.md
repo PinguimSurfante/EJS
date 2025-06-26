@@ -32,3 +32,6 @@ Peguei o código dele e fui adaptando para o meu e entendendo como funciona o fe
 ---
 
 ### Uma notação importante que tinha esquecido era para colocar `parseInt` quando receber o id, pq ele retorna em string
+
+
+### Outra dificuldade que eu acabei de ter, fui mexer no EJS da tela de view e simplesmente o node quebrou, não consigo mais rodar o site até q seja feita uma mudança, dei ctrl+z mas não resolveu, o erro do header estar mal feito no view, é por causa do css entrando em conflito com o mesmo nome .container lá e do bootstrap, aparentemente está dando prioridade para o meu, por tanto não consegui resolver esse último erro, mas os erros são bons para nos moldar, então se está lendo isso, deus abençoe
